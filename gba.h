@@ -142,6 +142,7 @@ void fillScreenDMA(volatile u16 color);
 void drawChar(int row, int col, char ch, u16 color);
 void drawString(int row, int col, char *str, u16 color);
 void drawCenteredString(int row, int col, int width, int height, char *str, u16 color);
+void drawFromTop(const u16 *image);
 
 /** Contains the pixels of each character from a 6x8 font */
 // This is in the font.c file. You can replace the font if you want.

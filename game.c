@@ -113,6 +113,12 @@ int main(void) {
           if (bird_pos.col > o1.col - BIRD_WIDTH && bird_pos.col < o1.col + 30) {
             if (score < 10) {
               birdBlink(&bird_pos, &obstacleColor, &o1, &o2, &o3, score);
+
+              drawFromTop(loss);
+              for (int count = 0; count < 500; count++) {
+                waitForVBlank();
+              }
+
               drawFullScreenImageDMA(game_over);
               char over[] = "GAME OVER";
               drawCenteredString(0, 0, WIDTH, HEIGHT, over, BLACK);
@@ -136,6 +142,12 @@ int main(void) {
           if (bird_pos.col > o2.col - BIRD_WIDTH && bird_pos.col < o2.col + 30) {
             if (score < 10) {
               birdBlink(&bird_pos, &obstacleColor, &o1, &o2, &o3, score);
+
+              drawFromTop(loss);
+              for (int count = 0; count < 500; count++) {
+                waitForVBlank();
+              }
+
               drawFullScreenImageDMA(game_over);
               char over[] = "GAME OVER";
               drawCenteredString(0, 0, WIDTH, HEIGHT, over, BLACK);
@@ -159,6 +171,12 @@ int main(void) {
           if (bird_pos.col > o3.col - BIRD_WIDTH && bird_pos.col < o3.col + 30) {
             if (score < 10) {
               birdBlink(&bird_pos, &obstacleColor, &o1, &o2, &o3, score);
+
+              drawFromTop(loss);
+              for (int count = 0; count < 500; count++) {
+                waitForVBlank();
+              }
+
               state = LOSE;
               drawFullScreenImageDMA(game_over);
               char over[] = "GAME OVER";

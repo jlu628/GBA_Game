@@ -98,3 +98,14 @@ void drawCenteredString(int row, int col, int width, int height, char *str,
   int new_col = col + ((width - strWidth) >> 1);
   drawString(new_row, new_col, str, color);
 }
+
+void drawFromTop(const u16 *image) {
+  for (int r = 0; r < HEIGHT; r++) {
+    DMA[DMA_CHANNEL_3].src = image;
+    DMA[DMA_CHANNEL_3].dst = videoBuffer;
+    DMA[DMA_CHANNEL_3].cnt = DMA_ON | DMA_DESTINATION_INCREMENT | WIDTH * (r + 1);
+    for (int count = 0; count < 20; count++) {
+      waitForVBlank();
+    }
+  }
+}

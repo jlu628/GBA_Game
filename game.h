@@ -5,6 +5,7 @@
 #include "images/bg_game.h"
 #include "images/bird.h"
 #include "images/game_over.h"
+#include "images/loss.h"
 
 
 
@@ -38,13 +39,13 @@
 
 //Stores the coordination of top left cornor.
 typedef struct BirdPos {
-	int row;
-	int col;
+  int row;
+  int col;
 } BirdPos;
 
 typedef struct state {
-	int currentState;
-	int nextState;
+  int currentState;
+  int nextState;
 } State;
 
 typedef enum {
